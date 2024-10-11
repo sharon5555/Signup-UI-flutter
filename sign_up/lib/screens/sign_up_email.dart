@@ -45,7 +45,6 @@ class _SignUpEmailState extends State<SignUpEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
         leading: IconButton(
           icon: const Icon(
             Icons.chevron_left,
@@ -65,34 +64,9 @@ class _SignUpEmailState extends State<SignUpEmail> {
               padding: nDefaultPadding,
               child: Center(
                 child: Text(
-                  'Create Account',
+                  'Create Account with Email',
                   style: titleText,
                 ),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Padding(
-              padding: nDefaultPadding,
-              child: Row(
-                children: [
-                  Text(
-                    'Already a member?',
-                    style: subTitle,
-                  ),
-                  const SizedBox(width: 5),
-                  GestureDetector(
-                    onTap: () {
-                      // Handle login navigation
-                    },
-                    child: Text(
-                      'Log in',
-                      style: textButton.copyWith(
-                        decoration: TextDecoration.underline,
-                        decorationThickness: 1,
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
             const SizedBox(height: 10),

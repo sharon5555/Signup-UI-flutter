@@ -36,9 +36,12 @@ class _SignUpPasswordState extends State<SignUpPassword> {
             const SizedBox(height: 70),
             Padding(
               padding: nDefaultPadding,
-              child: Text(
-                'Sign Up With Phone Number',
-                style: titleText,
+              child: Center( // Centering the text
+                child: Text(
+                  'Sign Up With Phone Number',
+                  style: titleText,
+                  textAlign: TextAlign.center, // Center the text
+                ),
               ),
             ),
             const SizedBox(height: 5),
@@ -60,7 +63,6 @@ class _SignUpPasswordState extends State<SignUpPassword> {
                     _isAgreed = value ?? false; // Update the checkbox state
                   });
                 },
-                 // The text for the checkbox
               ),
             ),
             const SizedBox(height: 20),
@@ -72,22 +74,21 @@ class _SignUpPasswordState extends State<SignUpPassword> {
               ),
             ),
             const SizedBox(height: 20),
-Padding(
-  padding: nDefaultPadding,
-  child: GestureDetector( // Use GestureDetector for tap detection
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const ForgetPasswordScreen()), // Navigate to the Forget Password screen
-      );
-    },
-    child: Text(
-      'Forget Password',
-      style: subTitle.copyWith(color: nBlackColor),
-    ),
-  ),
-),
-
+            Padding(
+              padding: nDefaultPadding,
+              child: GestureDetector( // Use GestureDetector for tap detection
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ForgetPasswordScreen()), // Navigate to the Forget Password screen
+                  );
+                },
+                child: Text(
+                  'Forget Password',
+                  style: subTitle.copyWith(color: nBlackColor),
+                ),
+              ),
+            ),
             const SizedBox(height: 20),
           ],
         ),
