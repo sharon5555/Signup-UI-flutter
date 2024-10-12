@@ -44,8 +44,7 @@ class _SignUpPasswordState extends State<SignUpPassword> {
                 ),
               ),
             ),
-            const SizedBox(height: 5),
-            const SizedBox(height: 10),
+            const SizedBox(height: 25),
             Padding(
               padding: nDefaultPadding,
               child: PasswordForm(

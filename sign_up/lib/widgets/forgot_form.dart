@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/theme.dart';
 
-
 class ForgotForm extends StatelessWidget {
   const ForgotForm({super.key});
 
@@ -10,11 +9,18 @@ class ForgotForm extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: TextFormField(
-        decoration: const InputDecoration(
-            hintText: 'Email',
-            hintStyle: TextStyle(color: nTextFieldColor),
-            focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: nPrimaryColor))),
+        decoration: InputDecoration(
+          hintText: 'Email',
+          hintStyle: const TextStyle(color: nTextFieldColor),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: nPrimaryColor),
+            borderRadius: BorderRadius.circular(10), // Rounded corners
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: nTextFieldColor),
+            borderRadius: BorderRadius.circular(10), // Rounded corners
+          ),
+        ),
       ),
     );
   }

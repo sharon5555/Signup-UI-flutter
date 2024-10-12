@@ -69,7 +69,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 25),
             Padding(
               padding: nDefaultPadding,
               child: Form(
