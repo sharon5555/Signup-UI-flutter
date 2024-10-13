@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/forget_password_screen.dart';
 import 'package:sign_up/theme.dart';
 import 'package:sign_up/widgets/checkbox.dart';
 import 'package:sign_up/widgets/password_form.dart';
@@ -29,21 +28,19 @@ class _SignUpPasswordState extends State<SignUpPassword> {
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 70),
-            Padding(
-              padding: nDefaultPadding,
-              child: Center( // Centering the text
-                child: Text(
-                  'Sign Up With Phone Number',
-                  style: titleText,
-                  textAlign: TextAlign.center, // Center the text
-                ),
+      body: Padding(
+        padding: nDefaultPadding,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 120,
               ),
-            ),
+              Text(
+                'Confirm Phone Number',
+                style: titleText,
+              ),
             const SizedBox(height: 25),
             Padding(
               padding: nDefaultPadding,
@@ -73,28 +70,12 @@ class _SignUpPasswordState extends State<SignUpPassword> {
               ),
             ),
             const SizedBox(height: 20),
-            Padding(
-              padding: nDefaultPadding,
-              child: GestureDetector( // Use GestureDetector for tap detection
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ForgetPasswordScreen()), // Navigate to the Forget Password screen
-                  );
-                },
-                child: Text(
-                  'Forget Password',
-                  style: subTitle.copyWith(color: nBlackColor),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
           ],
         ),
       ),
+      )
     );
   }
-
   void _validateAndSubmit() {
     // Implement your validation and submission logic here
   }
