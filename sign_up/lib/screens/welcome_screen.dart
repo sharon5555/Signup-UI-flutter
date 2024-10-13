@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/sign_up_email.dart';
+import 'package:sign_up/screens/login.dart';
+
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -35,7 +36,7 @@ class WelcomeScreen extends StatelessWidget {
                     // Navigate to Sign Up with Email
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignUpEmail()),
+                      MaterialPageRoute(builder: (context) => Login()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

@@ -64,7 +64,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
               padding: nDefaultPadding,
               child: Center(
                 child: Text(
-                  'Create Account with Email',
+                  'Sign Up',
                   style: titleText,
                 ),
               ),
