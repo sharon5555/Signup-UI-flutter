@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/theme.dart';
 import 'package:sign_up/widgets/forgot_form.dart';
-import 'package:sign_up/widgets/password_form.dart';
+import 'package:sign_up/widgets/confirm_number_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {

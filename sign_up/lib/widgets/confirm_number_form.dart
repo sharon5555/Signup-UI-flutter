@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class PasswordForm extends StatefulWidget {
-  const PasswordForm({super.key, required void Function(String email) onEmailChanged});
+class ConfirmNumberForm extends StatefulWidget {
+  const ConfirmNumberForm({super.key, required void Function(String email) onEmailChanged});
 
   @override
-  _PasswordFormState createState() => _PasswordFormState();
+  _ConfirmNumberFormState createState() => _ConfirmNumberFormState();
 }
 
-class _PasswordFormState extends State<PasswordForm> {
+class _ConfirmNumberFormState extends State<ConfirmNumberForm> {
   bool _isObscure = true;
 
   @override
@@ -17,9 +17,6 @@ class _PasswordFormState extends State<PasswordForm> {
       children: [
         buildInputForm('Phone Number', false),
         const SizedBox(height: 15), // Bottom space between rows
-        buildInputForm('Password', true),
-        const SizedBox(height: 15), // Bottom space between rows
-        buildInputForm('Confirm Password', true),
       ],
     );
   }

@@ -4,14 +4,16 @@ import 'package:sign_up/screens/sign_up_email.dart';
 import 'package:sign_up/theme.dart';
 import 'package:sign_up/widgets/login_form.dart';
 import 'package:sign_up/widgets/login_option.dart';
-import 'package:sign_up/widgets/primary_button.dart'; // Make sure to import your SignUpEmail screen
+import 'package:sign_up/widgets/primary_button.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
 
+  // Controllers for the email and password fields
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  // FocusNodes to manage focus on email and password fields
   FocusNode email = FocusNode();
   FocusNode password = FocusNode();
 
@@ -25,7 +27,7 @@ class Login extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context); // Navigate back to the previous screen
           },
         ),
         actions: [
@@ -54,53 +56,43 @@ class Login extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 120,
-              ),
+              const SizedBox(height: 120),
               Text(
                 'Login',
                 style: titleText,
               ),
-              const SizedBox(
-                height: 25,
-              ),
-              const LogInForm(),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 25),
+              const LogInForm(), // Form fields for login
+              const SizedBox(height: 10),
               GestureDetector(
                 onTap: () {
+                  // Navigate to ForgetPasswordScreen
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ForgetPasswordScreen()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgetPasswordScreen(),
+                    ),
+                  );
                 },
-                child: const Text(
+                child: Text(
                   'Forgot password?',
-                  style: TextStyle(
-                    color: nZambeziColor,
-                    fontSize: 16,
-                    decorationThickness: 1,
-                  ),
+                  style: subTitle.copyWith(color: nPrimaryColor),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               PrimaryButton(
-                buttonText: 'Log In', onPressed: () {},
+                buttonText: 'Sign In',
+                onPressed: () {
+                  // Implement your sign-in logic here
+                },
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Text(
                 'Or log in with:',
                 style: subTitle.copyWith(color: nZambeziColor),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const LoginOption(),
+              const SizedBox(height: 20),
+              const LoginOption(), // Options for logging in with social accounts
             ],
           ),
         ),
