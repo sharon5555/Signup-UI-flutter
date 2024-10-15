@@ -17,6 +17,8 @@ class _ConfirmNumberFormState extends State<ConfirmNumberForm> {
       children: [
         buildInputForm('Phone Number', false),
         const SizedBox(height: 15), // Bottom space between rows
+        buildInputForm('Phone Number Verification Code', false),
+        const SizedBox(height: 15), // Bottom space between rows
       ],
     );
   }

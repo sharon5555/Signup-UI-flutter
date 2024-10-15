@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up/screens/confirm_number.dart';
 import 'package:sign_up/theme.dart';
 import 'package:sign_up/widgets/forgot_form.dart';
-import 'package:sign_up/widgets/confirm_number_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -67,7 +67,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PasswordForm(
+                    builder: (context) =>ConfirmNumber(
                       onEmailChanged: (String email) {},
                     ),
                   ),

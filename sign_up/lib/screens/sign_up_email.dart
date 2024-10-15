@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/screens/confirm_number.dart';
 import 'package:sign_up/widgets/checkbox.dart';
-import 'package:sign_up/widgets/confirm_number_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
 import 'package:sign_up/widgets/sign_up_option.dart';
 import 'package:sign_up/widgets/signup_form.dart';
@@ -33,7 +32,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => PasswordForm(
+          builder: (context) => ConfirmNumber(
             onEmailChanged: (String email) {},
           ),
         ),
