@@ -58,7 +58,7 @@ class Login extends StatelessWidget {
             children: [
               const SizedBox(height: 120),
               Text(
-                'Login',
+                'Sign in',
                 style: titleText,
               ),
               const SizedBox(height: 25),
@@ -88,7 +88,7 @@ class Login extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'Or log in with:',
+                'Or sign in with:',
                 style: subTitle.copyWith(color: nZambeziColor),
               ),
               const SizedBox(height: 20),
