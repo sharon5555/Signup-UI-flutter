@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up/theme.dart';
 
 class SignUpOption extends StatelessWidget {
   const SignUpOption({super.key});
@@ -6,24 +7,32 @@ class SignUpOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        BuildButton(
-          iconImage: Image(
-            height: 20,
-            width: 20,
-            image: AssetImage('assets/google.png'),
+        Expanded(
+          child: BuildButton(
+            iconImage: Image(
+              height: 30,
+              width: 30,
+              image: AssetImage('assets/google.png'),
+            ),
+            textButton: 'Google',
+            textStyle: TextStyle(
+              color: nZambeziColor,
+              fontSize: 16,
+            ), // Optional styling
           ),
-          textButton: 'Google',
         ),
-        SizedBox(width: 16), // Add 16px space between the buttons
-        BuildButton(
-          iconImage: Image(
-            height: 20,
-            width: 20,
-            image: AssetImage('assets/apple.png'),
+        SizedBox(width: 16), // 16px space between the buttons
+        Expanded(
+          child: BuildButton(
+            iconImage: Image(
+              height: 30,
+              width: 30,
+              image: AssetImage('assets/apple.png'),
+            ),
+            textButton: 'Apple',
+            textStyle: TextStyle(color: nZambeziColor), // Optional styling
           ),
-          textButton: 'Apple',
         ),
       ],
     );
@@ -33,7 +42,14 @@ class SignUpOption extends StatelessWidget {
 class BuildButton extends StatelessWidget {
   final Image iconImage;
   final String textButton;
-  const BuildButton({super.key, required this.iconImage, required this.textButton});
+  final TextStyle textStyle; // Add the textStyle parameter
+
+  const BuildButton({
+    super.key,
+    required this.iconImage,
+    required this.textButton,
+    required this.textStyle,
+  });
 
   @override
   Widget build(BuildContext context) {

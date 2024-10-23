@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up/theme.dart';
 
 class LoginOption extends StatelessWidget {
   const LoginOption({super.key});
@@ -6,24 +7,32 @@ class LoginOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        BuildButton(
-          iconImage: Image(
-            height: 20,
-            width: 20,
-            image: AssetImage('assets/google.png'),
+        Expanded(
+          child: BuildButton(
+            iconImage: Image(
+              height: 30,
+              width: 30,
+              image: AssetImage('assets/google.png'),
+            ),
+            textButton: 'Google',
+            textStyle: TextStyle(
+              color: nZambeziColor,
+              fontSize: 16,
+            ), // Optional styling
           ),
-          textButton: 'Google',
         ),
-        SizedBox(width: 16), // Add 16px space between the buttons
-        BuildButton(
-          iconImage: Image(
-            height: 20,
-            width: 20,
-            image: AssetImage('assets/apple.png'),
+        SizedBox(width: 16), // 16px space between the buttons
+        Expanded(
+          child: BuildButton(
+            iconImage: Image(
+              height: 30,
+              width: 30,
+              image: AssetImage('assets/apple.png'),
+            ),
+            textButton: 'Apple',
+            textStyle: TextStyle(color: nZambeziColor), // Optional styling
           ),
-          textButton: 'Apple',
         ),
       ],
     );
@@ -33,14 +42,20 @@ class LoginOption extends StatelessWidget {
 class BuildButton extends StatelessWidget {
   final Image iconImage;
   final String textButton;
-  const BuildButton({super.key, required this.iconImage, required this.textButton});
+  final TextStyle textStyle;
+
+  const BuildButton({
+    super.key,
+    required this.iconImage,
+    required this.textButton,
+    required this.textStyle,
+  });
 
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return Container(
       height: mediaQuery.height * 0.06,
-      width: mediaQuery.width * 0.42, // Increase width for each button
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey[300] ?? Colors.grey),
@@ -49,8 +64,11 @@ class BuildButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           iconImage,
-          const SizedBox(width: 5),
-          Text(textButton),
+          const SizedBox(width: 5), // Space between icon and text
+          Text(
+            textButton,
+            style: textStyle, // Apply the text style here
+          ),
         ],
       ),
     );
