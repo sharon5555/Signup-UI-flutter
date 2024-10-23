@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/theme.dart';
-import 'package:sign_up/widgets/confirm_number_form.dart';
+import 'package:sign_up/widgets/change_number_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
 
 class ConfirmNumber extends StatefulWidget {
@@ -32,11 +32,20 @@ class _ConfirmNumberState extends State<ConfirmNumber> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 70),
+            // Centering the image
+            Center(
+              child: Image.asset(
+                'assets/cnumber.webp', // Replace with your image path
+                height: 100, // Adjust height as needed
+                width: 100, // Adjust width as needed
+              ),
+            ),
+            const SizedBox(height: 20), // Space between image and title
             Padding(
               padding: nDefaultPadding,
               child: Center(
                 child: Text(
-                  'Confirm Phone Number',
+                  'Change Phone Number',
                   style: titleText,
                   textAlign: TextAlign.center, // Center the text
                 ),

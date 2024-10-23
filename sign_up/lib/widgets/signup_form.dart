@@ -21,9 +21,6 @@ class _SignUpFormState extends State<SignUpForm> {
         const SizedBox(height: 15), // Bottom space between rows
         buildInputForm('Email', false),
         const SizedBox(height: 15), // Bottom space between rows
-        buildInputForm('Password', true),
-        const SizedBox(height: 15), // Bottom space between rows
-        buildInputForm('Confirm Password', true),
       ],
     );
   }

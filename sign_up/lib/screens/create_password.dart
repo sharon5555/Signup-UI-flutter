@@ -1,29 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/create_password.dart'; // Import CreatePassword screen
+import 'package:sign_up/screens/change_number.dart';
 import 'package:sign_up/widgets/checkbox.dart';
+import 'package:sign_up/widgets/create_password_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
-import 'package:sign_up/widgets/sign_up_option.dart';
-import 'package:sign_up/widgets/signup_form.dart';
 import '../theme.dart';
 
-class SignUpEmail extends StatefulWidget {
-  const SignUpEmail({super.key});
+class CreatePassword extends StatefulWidget {
+  const CreatePassword({super.key, required Null Function(String email) onEmailChanged});
 
   @override
-  _SignUpEmailState createState() => _SignUpEmailState();
+  _CreatePasswordState createState() => _CreatePasswordState();
 }
 
-class _SignUpEmailState extends State<SignUpEmail> {
+class _CreatePasswordState extends State<CreatePassword> {
   final _formKey = GlobalKey<FormState>(); // For form validation
   bool _agreeToTerms = false; // To track checkbox state
-  String _email = '';
-
-  // Callback for when email changes in the form
-  void _onEmailChanged(String email) {
-    setState(() {
-      _email = email;
-    });
-  }
 
   // Method to validate and submit the form
   void _validateAndSubmit() {
@@ -32,13 +23,16 @@ class _SignUpEmailState extends State<SignUpEmail> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => CreatePassword(
-            onEmailChanged: (String email) {},
+          builder: (context) => ConfirmNumber(
+            onEmailChanged: (String email) {
+              // You can handle the email change here
+              print("Email changed: $email");
+            },
           ),
         ),
       );
     } else if (!_agreeToTerms) {
-      // Show error message if terms not agreed
+      // Show error message if checkbox isn't checked
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('You must agree to the terms and conditions.')),
       );
@@ -64,32 +58,31 @@ class _SignUpEmailState extends State<SignUpEmail> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 70),
-            // Centering the image
             Center(
               child: Image.asset(
-                'assets/signup.webp', // Replace with your image path
-                height: 100, // Adjust height as needed
-                width: 100, // Adjust width as needed
+                'assets/cpassword.webp', // Replace with your image path
+                height: 100,
+                width: 100,
               ),
             ),
-            const SizedBox(height: 20), // Space between image and title
+            const SizedBox(height: 20),
             Padding(
               padding: nDefaultPadding,
               child: Center(
                 child: Text(
-                  'Sign Up',
+                  'Create Password',
                   style: titleText,
                 ),
               ),
             ),
-            const SizedBox(height: 10), // Space between title and description
+            const SizedBox(height: 10),
             const Padding(
               padding: nDefaultPadding,
               child: Center(
                 child: Text(
-                  'Create an account to get started with our services.',
-                  textAlign: TextAlign.center, // Center the text
-                  style: TextStyle(color: nZambeziColor), // Optional styling
+                  'Create a password to secure your account.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: nZambeziColor),
                 ),
               ),
             ),
@@ -98,21 +91,23 @@ class _SignUpEmailState extends State<SignUpEmail> {
               padding: nDefaultPadding,
               child: Form(
                 key: _formKey,
-                child: SignUpForm(
-                  onEmailChanged: _onEmailChanged, // Track email changes
+                child: CreatePasswordForm(
+                  onEmailChanged: (email) {
+                    // Handle email change
+                    print("Email entered: $email");
+                  },
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Padding(
               padding: nDefaultPadding,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Checkbox and terms
                   Expanded(
                     child: CheckBox(
-                      'Agree to terms and conditions.',
+                      'Keep me signed in.',
                       value: _agreeToTerms,
                       onChanged: (bool newValue) {
                         setState(() {
@@ -121,17 +116,23 @@ class _SignUpEmailState extends State<SignUpEmail> {
                       },
                     ),
                   ),
-                  // Confirm Phone Number text now navigates to CreatePassword screen
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CreatePassword(onEmailChanged: (String email)  {},)), // Navigate to CreatePassword screen
+                        MaterialPageRoute(
+                          builder: (context) => ConfirmNumber(
+                            onEmailChanged: (String email) {
+                              // Handle email change
+                              print("Email changed in ConfirmNumber: $email");
+                            },
+                          ),
+                        ),
                       );
                     },
                     child: Text(
-                      'Create new Password',
-                      style: subTitle.copyWith(color: nPrimaryColor), // Style the text as needed
+                      'Change Phone Number',
+                      style: subTitle.copyWith(color: nPrimaryColor),
                     ),
                   ),
                 ],
@@ -141,26 +142,10 @@ class _SignUpEmailState extends State<SignUpEmail> {
             Padding(
               padding: nDefaultPadding,
               child: PrimaryButton(
-                buttonText: 'Sign Up',
-                onPressed: _validateAndSubmit, // Trigger validation and submission
+                buttonText: 'Create Password',
+                onPressed: _validateAndSubmit,
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: nDefaultPadding,
-              child: Center(
-                child: Text(
-                  'Or Sign Up with:',
-                  style: subTitle, // Style this text as needed
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Padding(
-              padding: nDefaultPadding,
-              child: SignUpOption(),
-            ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

@@ -57,9 +57,27 @@ class Login extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 120),
-              Text(
-                'Sign in',
-                style: titleText,
+              Center( // Center the image
+                child: Image.asset(
+                  'assets/signin.webp', // Replace with your image path
+                  height: 100, // Adjust height as needed
+                  width: 100, // Adjust width as needed
+                ),
+              ),
+              const SizedBox(height: 20),
+              Center( // Center the "Sign in" text
+                child: Text(
+                  'Sign in',
+                  style: titleText,
+                ),
+              ),
+              const SizedBox(height: 10), // Space between title and description
+              const Center( // Center the description text
+                child: Text(
+                  'Please enter your details to continue.',
+                  style: TextStyle(color: nZambeziColor),
+                  textAlign: TextAlign.center, // Center the description
+                ),
               ),
               const SizedBox(height: 25),
               const LogInForm(), // Form fields for login

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/confirm_number.dart';
+import 'package:sign_up/screens/change_number.dart';
+import 'package:sign_up/screens/create_password.dart';
 import 'package:sign_up/theme.dart';
 import 'package:sign_up/widgets/forgot_form.dart';
 import 'package:sign_up/widgets/primary_button.dart';
@@ -67,7 +68,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>ConfirmNumber(
+                    builder: (context) =>CreatePassword(
                       onEmailChanged: (String email) {},
                     ),
                   ),
