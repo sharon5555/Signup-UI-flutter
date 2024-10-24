@@ -33,7 +33,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
         context,
         MaterialPageRoute(
           builder: (context) => CreatePassword(
-            onEmailChanged: (String email) {},
+            onEmailChanged: (String email) {}, // Pass data if needed
           ),
         ),
       );
@@ -119,19 +119,6 @@ class _SignUpEmailState extends State<SignUpEmail> {
                           _agreeToTerms = newValue;
                         });
                       },
-                    ),
-                  ),
-                  // Confirm Phone Number text now navigates to CreatePassword screen
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CreatePassword(onEmailChanged: (String email)  {},)), // Navigate to CreatePassword screen
-                      );
-                    },
-                    child: Text(
-                      'Create new Password',
-                      style: subTitle.copyWith(color: nPrimaryColor), // Style the text as needed
                     ),
                   ),
                 ],
