@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/welcome_screen.dart';
+import 'package:sign_up/screens/onboarding_screen.dart';
  // Import the Welcome Screen
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const WelcomeScreen(),  // Set WelcomeScreen as the home screen
+      home: const OnboardingScreen(),  // Set WelcomeScreen as the home screen
     );
   }
 }

@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  smooth_page_indicator: ^1.0.0+2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -67,6 +68,9 @@ flutter:
     - assets/cpassword.webp
     - assets/signin.webp
     - assets/signup.webp
+    - assets/board.webp
+    - assets/transport.webp
+    - assets/gstarted.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
