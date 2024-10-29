@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up/screens/login.dart';
 import 'package:sign_up/theme.dart';
+import 'package:sign_up/widgets/primary_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -51,6 +53,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ],
             ),
           ),
+          // Show Get Started button only on the last page
+          if (_currentIndex == 3) ...[
+            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                print('Get Started button tapped'); // Debug print
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+              child: Container(
+                width: 300, // Adjust the button width
+                padding: const EdgeInsets.symmetric(vertical: 20), // Add some vertical padding
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: nPrimaryColor, // Use your primary color
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(color: Colors.white, fontSize: 16), // Adjust text style as needed
+                ),
+              ),
+            ),
+            const SizedBox(height: 150), // Add bottom spacing
+          ],
           // Smooth Page Indicator positioned slightly above the bottom
           Padding(
             padding: const EdgeInsets.only(bottom: 150.0), // Adjust this value as needed
