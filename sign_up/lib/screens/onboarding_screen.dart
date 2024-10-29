@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up/theme.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -38,6 +39,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   "Explore the cool features of our app",
                 ),
                 onboardingPage(
+                  "assets/handshake.png",
+                  "Stay Connected Anytime, Anywhere",
+                  "Stay connected with timely updates, and 24/7 support making your journey seamless",
+                ),
+                onboardingPage(
                   "assets/gstarted.webp",
                   "Get Started",
                   "Let's help you get started now!",
@@ -50,9 +56,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.all(16.0),
             child: SmoothPageIndicator(
               controller: _pageController,
-              count: 3,
+              count: 4,
               effect: const ExpandingDotsEffect(
-                activeDotColor: Colors.blue,
+                activeDotColor: nPrimaryColor,
                 dotColor: Colors.grey,
                 dotHeight: 10,
                 dotWidth: 10,
