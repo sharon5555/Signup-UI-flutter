@@ -51,9 +51,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ],
             ),
           ),
-          // Smooth Page Indicator (Dots at the bottom)
+          // Smooth Page Indicator positioned slightly above the bottom
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(bottom: 150.0), // Adjust this value as needed
             child: SmoothPageIndicator(
               controller: _pageController,
               count: 4,
