@@ -110,7 +110,8 @@ class Login extends StatelessWidget {
                 style: subTitle.copyWith(color: nZambeziColor),
               ),
               const SizedBox(height: 20),
-              const LoginOption(), // Options for logging in with social accounts
+              const LoginOption(),
+              const SizedBox(height: 20), // Options for logging in with social accounts
             ],
           ),
         ),

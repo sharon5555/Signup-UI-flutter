@@ -103,7 +103,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             Padding(
               padding: nDefaultPadding,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: CheckBox(
@@ -116,6 +116,8 @@ class _CreatePasswordState extends State<CreatePassword> {
                       },
                     ),
                   ),
+                  const SizedBox(width: 10),
+                  Flexible(child: 
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -132,8 +134,11 @@ class _CreatePasswordState extends State<CreatePassword> {
                     },
                     child: Text(
                       'Change Phone Number',
-                      style: subTitle.copyWith(color: nPrimaryColor),
+                      style: subTitle.copyWith(color: nSecondaryColor),
+                       textAlign: TextAlign.right, // Align the text to the right
+                        overflow: TextOverflow.ellipsis, // Truncate overflowed text
                     ),
+                  ),
                   ),
                 ],
               ),
